@@ -54,10 +54,7 @@ body:
       description: Please list and describe the mods you are using (name and version).
       render: markdown
     validations:
-      required: true
-    when:
-      field: mods-in-use
-      equals: Yes
+      required: false
   - type: dropdown
     id: map
     attributes:
@@ -73,14 +70,11 @@ body:
   - type: input
     id: map-other
     attributes:
-      label: Which map?
+      label: Which map (Other)?
       description: Please specify the map.
       placeholder: "Example: Gogland, Chernarus Reforged"
     validations:
-      required: true
-    when:
-      field: map
-      equals: Other
+      required: false
   - type: dropdown
     id: environment
     attributes:
