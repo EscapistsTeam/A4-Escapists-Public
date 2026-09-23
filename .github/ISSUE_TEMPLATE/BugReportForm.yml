@@ -1,0 +1,99 @@
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: [bug, triage]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Describe the bug
+      description: Also tell us, what did you expect to happen?
+      placeholder: A bug happened! I think this is what should have happened.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: How can we reproduce this bug?
+      placeholder: By doing this when this is happening!
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: If applicable, add screenshots to help explain your problem.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version of the game mode did the bug occur with?
+      placeholder: "Example: 1.6.30"
+    validations:
+      required: true
+  - type: input
+    id: arma-reforger-version
+    attributes:
+      label: Arma Reforger version
+      description: What Arma Reforger version did the bug occur with?
+      placeholder: "Example: 1.6"
+    validations:
+      required: true
+  - type: dropdown
+    id: mods-in-use
+    attributes:
+      label: Are you using any mods?
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true
+  - type: textarea
+    id: mods-in-use-list
+    attributes:
+      label: Which mods?
+      description: Please list and describe the mods you are using (name and version).
+      render: markdown
+    validations:
+      required: true
+    when:
+      field: mods-in-use
+      equals: Yes
+  - type: dropdown
+    id: map
+    attributes:
+      label: Map
+      description: On what map did this occur?
+      options:
+        - Everon
+        - Kolguyev
+        - Arland
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: map-other
+    attributes:
+      label: Which map?
+      description: Please specify the map.
+      placeholder: "Example: Gogland, Chernarus Reforged"
+    validations:
+      required: true
+    when:
+      field: map
+      equals: Other
+  - type: dropdown
+    id: environment
+    attributes:
+      label: What environment?
+      description: In what environment did the bug occur?
+      options:
+        - Listen Server
+        - Single Player
+        - Dedicated Server
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Additional context you think might help like the game log (`arma.log`).
